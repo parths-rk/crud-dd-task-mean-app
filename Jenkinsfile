@@ -2,11 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository'){
-            steps {
-                git url: 'https://github.com/parths-rk/crud-dd-task-mean-app'
-            }
-        }
+
 
         stage('Build Frontend Image') {
             steps {
