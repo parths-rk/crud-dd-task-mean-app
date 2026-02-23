@@ -6,7 +6,8 @@ pipeline {
          stage('Build Backend Image') {
             steps {
                 sh 'docker build -t mean-backend:${BUILD_TAG} ./backend'
-                sh 'docker tag mean-backend:${BUILD_TAG} mean-backend:latest'
+                sh 'docker tag mean-backend:${BUILD_TAG} parth1111/mean-backend:${BUILD_TAG}'
+                sh 'docker tag mean-backend:${BUILD_TAG} parth1111/mean-backend:latest'
             }
         }
 
@@ -14,7 +15,8 @@ pipeline {
         stage('Build Frontend Image') {
             steps {
                 sh 'docker build -t mean-frontend:${BUILD_TAG} ./frontend'
-                sh 'docker tag mean-frontend:${BUILD_TAG} mean-frontend:latest'
+                sh 'docker tag mean-frontend:${BUILD_TAG} parth1111/mean-frontend:${BUILD_TAG}'
+                sh 'docker tag mean-frontend:${BUILD_TAG} parth1111/mean-frontend:latest'
             }
         }
 
