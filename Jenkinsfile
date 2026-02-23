@@ -18,13 +18,6 @@ pipeline {
             }
         }
 
-        stage('Deploy Containers'){
-            steps {
-                sh 'docker compose down --remove-orphans || true' 
-                sh 'docker compose up -d'
-            }
-        }
-
         stage('Docker Login') {
             steps {
                 withCredentials([usernamePassword(
