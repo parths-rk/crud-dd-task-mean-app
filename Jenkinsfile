@@ -24,5 +24,32 @@ pipeline {
                 sh 'docker compose up -d'
             }
         }
+
+        stage('Docker Login') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-creds',
+                    usernameVariable: 'USER',
+                    passwordVariable: 'PASS'
+                )]) {
+                    sh 'echo $PASS | docker login -u $USER --password-stdin'
+                }
+            }
+        }
+
+        stage('Push Images') {
+            steps {
+                sh 'docker push $DOCKER_USER/mean-backend:$BUILD_TAG'
+                sh 'docker push $DOCKER_USER/mean-backend:latest'
+                sh 'docker push $DOCKER_USER/mean-frontend:$BUILD_TAG'
+                sh 'docker push $DOCKER_USER/mean-frontend:latest'
+            }
+        }
+
+        stage('Deploy Containers') {
+            steps {
+                sh 'docker compose down --remove-orphans || true'
+                sh 'docker compose up -d'
+            }
     }
 }
