@@ -32,10 +32,10 @@ pipeline {
 
         stage('Push Images') {
             steps {
-                sh 'docker push $DOCKER_USER/mean-backend:$BUILD_TAG'
-                sh 'docker push $DOCKER_USER/mean-backend:latest'
-                sh 'docker push $DOCKER_USER/mean-frontend:$BUILD_TAG'
-                sh 'docker push $DOCKER_USER/mean-frontend:latest'
+                sh 'docker push parth1111/mean-backend:$BUILD_TAG'
+                sh 'docker push parth1111/mean-backend:latest'
+                sh 'docker push parth1111/mean-frontend:$BUILD_TAG'
+                sh 'docker push parth1111/mean-frontend:latest'
             }
         }
 
