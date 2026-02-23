@@ -6,7 +6,7 @@ pipeline {
 
         stage('Build Frontend Image') {
             steps {
-                sh 'docker-build -t mean-frontend ./frontend'
+                sh 'docker build -t mean-frontend ./frontend'
             }
         }
 
