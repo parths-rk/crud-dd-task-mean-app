@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository'){
             steps {
-                git https://github.com/parths-rk/crud-dd-task-mean-app
+                git url://github.com/parths-rk/crud-dd-task-mean-app
             }
         }
 
