@@ -1,3 +1,5 @@
+# Every task is done. Instead of using cloud because financial verification issues, I used Windows WSL (Ubuntu VM on windows), everything else will remain same on cloud. 
+
 # Assignment task 
 
 # Setup and Deployment 
