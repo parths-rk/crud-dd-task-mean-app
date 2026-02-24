@@ -7,7 +7,7 @@ services:
     volumes:
       - mongo-data:/data/db
 
-  backend:
+  backend:    
     image: parths1111/mean-backend:latest
     ports:
       - "3000:3000"
