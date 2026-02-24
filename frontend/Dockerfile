@@ -1,4 +1,4 @@
-FROM node:18 asdocker compose up -d build
+FROM node:18 as docker
 
 WORKDIR /app
 
